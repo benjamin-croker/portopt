@@ -2,7 +2,9 @@ import unittest
 import numpy as np
 import portopt
 
-# tests adapted from examples in https://github.com/lequant40/portfolio_allocation_js
+# tests adapted from examples in
+# https://github.com/lequant40/portfolio_allocation_js
+
 
 class TestSharpeOptim(unittest.TestCase):
     def setUp(self):
@@ -21,6 +23,7 @@ class TestSharpeOptim(unittest.TestCase):
         allocs = portopt.effecient_frontier(self.rets, self.cov, 0.08, n=200)
         best = portopt.optim_sharpe(allocs, self.rets, self.cov, 0.08, n=200)
         np.testing.assert_almost_equal(expected_weights, best['w'], decimal=2)
+
 
 if __name__ == '__main__':
     unittest.main()
